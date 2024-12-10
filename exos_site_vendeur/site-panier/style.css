@@ -13,12 +13,18 @@ body {
    
    }
 header {
-    background: linear-gradient(to right, #ffad33, #f8f8f8); /* Dégradé d'orange à blanc */
+    background: linear-gradient(to right, #d49d05, #f8f8f8); /* Dégradé d'orange à blanc */
     color: #4c4c4c; /* Brun foncé */
     text-align: center;
     padding: 20px 0;
 }
 
+header.dark {
+    background: linear-gradient(to right, #161616, #f8f8f8); /* Dégradé d'orange à blanc */
+    color: #fff7f7; /* Brun foncé */
+    text-align: center;
+    padding: 20px 0;
+}
 
 
 h1 {
@@ -31,6 +37,16 @@ h1 {
     
 }
 
+
+h1.dark {
+     
+    font-size: 2em; /* Taille de la police plus grande */
+    color: rgb(212, 212, 212); /* Couleur du texte */
+    text-transform: uppercase; /* Convertit le texte en majuscules */
+    letter-spacing: 2px; /* Espacement entre les lettres */
+    margin-bottom: 20px; /* Marge inférieure pour plus d'espace */
+
+}
 header a img{
     width: 40px; /* Ajustez la largeur selon vos besoins */
     height: auto; /* Cela maintient le rapport hauteur/largeur */
@@ -196,3 +212,53 @@ nav ul li:hover {
 
    
 } 
+/* Style du bouton switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-top: 20px;
+}
+
+/* Cacher l'input checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Style de la glissière */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+/* Bouton de la glissière */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+/* Lorsque le switch est activé (mode sombre) */
+input:checked + .slider {
+    background-color: #4CAF50;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
